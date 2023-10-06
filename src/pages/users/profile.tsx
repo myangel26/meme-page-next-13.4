@@ -4,6 +4,7 @@ import { TypeUser } from "../../../state";
 import { Store } from "react-notifications-component";
 import { NotificationType } from "../../../constants/typeGlobal";
 import userService from "../../../services/userService";
+import Image from "next/image";
 
 //Do Input File nhận vào là 1 object File
 //=> Không thễ gửi API dạng Json
@@ -99,9 +100,9 @@ const UserProfile = () =>  {
                     <p>Profile</p>
                     <div className="ass1-login__form">
                         <div className="avatar" onClick={ handleSelectFile } style={{ cursor: 'pointer' }}>
-                            <img
+                            <Image
                                 src={ avatarURL }
-                                alt={ user?.fullname }
+                                alt={ user?.fullname || '' }
                             />
                         </div>
                         <form action="#" onSubmit={ handleSubmit }>

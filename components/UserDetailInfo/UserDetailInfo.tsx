@@ -1,6 +1,7 @@
 import React from "react";
 import { TypeUser, useGlobalState } from "../../state";
 import Link from "next/link";
+import Image from "next/image";
 
 type PropsType = {
     userDetailInfo: TypeUser,
@@ -23,7 +24,10 @@ const UserDetailInfo: React.FC<PropsType> = ({
                 <div className="ass1-head-user__content">
                     <div className="ass1-head-user__image">
                         <Link href={'/users/profile'}>
-                            <img src={ userDetailInfo.profilepicture || "/images/avatar-02.png" } alt={ userDetailInfo.fullname } />
+                            <Image 
+                                src={ userDetailInfo.profilepicture || "/images/avatar-02.png" } 
+                                alt={ userDetailInfo.fullname || '' } 
+                            />
                         </Link>
                     </div>
                     <div className="ass1-head-user__info">
@@ -31,7 +35,7 @@ const UserDetailInfo: React.FC<PropsType> = ({
                             <div className="ass1-head-user__name">
                                 <span>{ userDetailInfo.fullname }</span>
                                 <i>
-                                    <img src="/fonts/emotion/svg/Verified.svg" alt="" />
+                                    <Image src="/fonts/emotion/svg/Verified.svg" alt="" />
                                 </i>
                             </div>
                             <div className="w-100" />

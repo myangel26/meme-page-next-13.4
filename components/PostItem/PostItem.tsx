@@ -5,6 +5,7 @@ import Link from "next/link"
 import relativeTime from 'dayjs/plugin/relativeTime';
 import langVI from 'dayjs/locale/vi';
 import { hightlightText } from "../../helpers";
+import Image from "next/image";
 
 dayjs.extend(relativeTime);
 
@@ -53,7 +54,7 @@ const PostItem: React.FC<PropsType> = ({
                 <div className="ass1-section">
                     <div className="ass1-section__head">
                         <Link href="/users/[userid]" as={`/users/${ post.USERID }`} className="ass1-section__avatar ass1-avatar">
-                            <img src={ post.profilepicture || "/images/avatar-02.png" } alt={ post.fullname } />
+                            <Image src={ post.profilepicture || "/images/avatar-02.png" } alt={ post.fullname } />
                         </Link>
                         <div>
                             <Link 
@@ -71,7 +72,7 @@ const PostItem: React.FC<PropsType> = ({
                         />
                         <div className="ass1-section__image">
                             <Link href="/posts/[postid]" as={`/posts/${ post.PID }`}>
-                                <img src={ post.url_image } alt={ post.url_image } />
+                                <Image src={ post.url_image } alt={ post.url_image } />
                             </Link>
                         </div>
                     </div>

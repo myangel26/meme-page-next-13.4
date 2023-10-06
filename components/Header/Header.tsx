@@ -4,6 +4,7 @@ import Cookies from "js-cookie";
 import { useRouter } from "next/router";
 import HeaderSearch from "./HeaderSearch";
 import HeaderMenu from "./HeaderMenu";
+import Image from 'next/image'
 
 export default function Header() {
     const router = useRouter();
@@ -39,7 +40,10 @@ export default function Header() {
                             <div className="wrapper-user">
                                 <Link href={ '/users/[userid]' } as={ `/users/${ userInfo.USERID }` } className="user-header">
                                     <span className="avatar">
-                                        <img src={userInfo.profilepicture || '/images/avatar-02.png'} alt="avata" />
+                                        <Image 
+                                            src={userInfo.profilepicture || '/images/avatar-02.png'} 
+                                            alt="avata" 
+                                        />
                                     </span>
                                     <span className="email">{userInfo.email}</span>
                                 </Link>

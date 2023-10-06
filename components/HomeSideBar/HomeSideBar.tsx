@@ -18,7 +18,7 @@ const HomeSideBar:React.FC<PropsType> = ({
         if(userPosts.length === 0) {
             return (
                 <>
-                    <p>You don't have any posts</p>
+                    <p>You don&apos;t have any posts</p>
                     <p>Please click <Link href={'/posts/create'}>here</Link> to post</p>
                 </>
             )

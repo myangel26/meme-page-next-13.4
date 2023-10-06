@@ -4,6 +4,7 @@ import langVI from 'dayjs/locale/vi';
 import { CommentType } from "@/pages/posts/[postid]";
 import React from "react";
 import Link from 'next/link';
+import Image from 'next/image';
 
 dayjs.extend(relativeTime);
 
@@ -38,7 +39,7 @@ const PostCommentList:React.FC<PropsType> = ({
                         return (
                             <div key={comment.CID} className="ass1-comments__section">
                                 <Link href="/users/[userid]" as={`/users/${ comment.USERID }`} className="ass1-comments__avatar ass1-avatar">
-                                    <img src={ comment.profilepicture || "/images/avatar-02.png" } alt="" />
+                                    <Image src={ comment.profilepicture || "/images/avatar-02.png" } alt="" />
                                 </Link>
                                 <div className="ass1-comments__content">
                                     <Link href="/users/[userid]" as={`/users/${ comment.USERID }`} className="ass1-comments__name">

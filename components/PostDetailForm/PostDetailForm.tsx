@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { Store } from "react-notifications-component";
 import { NotificationType } from "../../constants/typeGlobal";
+import Image from "next/image";
 
 type PropsType ={
     url_image: string,
@@ -97,7 +98,7 @@ const PostDetailForm:React.FC<PropsType> = ({
                     />
                     <div className="ass1-section__image">
                         <a href="#">
-                            <img src={ imgURL } alt="default" />
+                            <Image src={ imgURL } alt="default" />
                         </a>
                     </div>
                     <a
